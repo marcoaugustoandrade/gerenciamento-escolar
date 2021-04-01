@@ -9,7 +9,17 @@
 </head>
 <body>
     <header class="text-light bg-success">
-        <h1 class="container">Gereciamento Escolar</h1>
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <h1>Gereciamento Escolar</h1>
+                {% if current_user.is_authenticated %}
+                <div>
+                    Olá, {{ current_user.get_nome() }}
+                    <a href="/logout" class="link-light">Sair</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
     </header>
     <div class="container">
         {% block conteudo %}
