@@ -72,4 +72,3 @@ def inserir_professor():
         db.session.commit()
         
         return redirect(url_for('listar_professores', msg='inserir'))
-

@@ -31,8 +31,9 @@ from app.models.tables import Nota
 
 from app.controllers import professor
 from app.controllers import usuario
+from app.controllers import disciplina
 
 
 @app.route('/home')
 def home():
-    return '<h1>Página inicial</h1>'
+    return '<h1>Pagina inicial</h1>'

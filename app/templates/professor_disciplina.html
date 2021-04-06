@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<h2>Associar professor na disciplina</h2>
+
+<form class="row g-3" method="GET" action="/disciplina/associar">
+    <div class="col-auto">
+        <label for="nome">Disciplina:</label>
+    </div>
+    <div class="col-auto">
+        <label for="nome" class="visually-hidden">Disciplina:</label>
+        <input type="text" class="form-control" id="nome" name="nome" disabled>
+    </div>
+    <div class="col-auto">
+        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modalSelecionarDisciplina">Selecionar</button>
+    </div>
+    <div class="col-auto">
+        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modalAdicionarProfessor">Adicionar Professor</button>
+    </div>
+</form>
+
+
+<table class="table">
+    <tr>
+        <th>Professor</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>Marco Andrade</td>
+        <td><button class="btn btn-danger">Remover</button></td>
+    </tr>
+    <tr>
+        <td>José Oliveira</td>
+        <td><button class="btn btn-danger">Remover</button></td>
+    </tr>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="modalSelecionarDisciplina" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Selecionar disciplina</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="row g-3" method="GET" action="/disciplina/associar">
+                <div class="col-auto">
+                    <label for="nome">Disciplina:</label>
+                </div>
+                <div class="col-auto">
+                    <label for="nome" class="visually-hidden">Disciplina:</label>
+                    <input type="text" class="form-control" id="nome" name="nome">
+                </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-primary mb-3">Pesquisar</button>
+                </div>
+            </form>
+
+            <table class="table">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Matemática Computacional</td>
+                    <th><button type="button" class="btn btn-primary">Selecionar</button></th>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Lógica de Programação</td>
+                    <th><button type="button" class="btn btn-primary">Selecionar</button></th>
+                </tr>
+            </table>
+
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger" onclick="deletarProfessor()">Deletar</button>
+        </div> -->
+      </div>
+    </div>
+</div>
+<!-- Modal -->
+
+{% endblock %}

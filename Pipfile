@@ -12,6 +12,8 @@ pymysql = "*"
 python-dotenv = "*"
 bcrypt = "*"
 flask-login = "*"
+pytest = "*"
+pytest-flask = "*"
 
 [dev-packages]
 
