@@ -42,3 +42,5 @@ def logout():
 @login_manager.unauthorized_handler
 def nao_autorizado():
      return redirect(url_for('login', mensagem='Faça login para acessar este recurso'))
+
+# TODO: implementar rota para recuperar a senha

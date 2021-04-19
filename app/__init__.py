@@ -5,8 +5,11 @@ from flask_migrate import Migrate, MigrateCommand
 from flask_login import LoginManager
 import os
 from dotenv import load_dotenv
+import logging
 
 load_dotenv()
+
+logging.basicConfig(filename="access.log", level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s")
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://'+ os.getenv("DB_USUARIO") +':'+ os.getenv("DB_PASSWORD") +'@'+ os.getenv("DB_LOCAL") + '/' + os.getenv("DB_DATABASE")
@@ -32,6 +35,7 @@ from app.models.tables import Nota
 from app.controllers import professor
 from app.controllers import usuario
 from app.controllers import disciplina
+from app.controllers import erros
 
 
 @app.route('/home')

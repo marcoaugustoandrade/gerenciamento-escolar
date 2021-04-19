@@ -29,10 +29,12 @@ notas (id, aluno_id, etapa_id, nota)
 * Autenticação: login + logout + verificação
 
 # TODO:
-* Verificar a pesquisa com filtro e paginação
-* Esqueci a senha (SMTP)
-* Perfil
+* [x] Logs
+* [x] Recuperação de dados
 * Models que tem regras de negócio
+* Esqueci a senha (SMTP)
+
 * Models que são somente CRUD
-* Logs
+* Verificar a pesquisa com filtro e paginação
+* Perfil
 * Módulos
